@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#000;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -18,10 +18,135 @@ body, a:link, a:visited, a:active{
   background-color: #555;
 }
 .title{
-  background-color: #777;
+  background-color: linear-gradient;
 }
 .dancer{
-  border:10px solid red;
+
+  border:10px dotted rgb(188, 28, 28);
   border-radius:10px;
   position:absolute;
 }
+.pacman{
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #f2d648;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+.pacman_eye {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 20px;
+  right: 40px;
+  background: #333333;
+}
+.pacman_mouth {
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-name: eat;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+/*
+Pacman animation using keyframes
+*/
+@keyframes eat {
+  0% {
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+  25% {
+    clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+  }
+  50% {
+    clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+  }
+  75% {
+   clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+  }
+  100% {
+   clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+}
+
+/*
+Pacman Food
+*/
+.pacman_food {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  top: 40%;
+  left: 120px;
+  animation-name: food;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+/*
+Pacman food animation using keyframes
+*/
+@keyframes food {
+  0% {
+    transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+.pacManAll {
+  animation-name: moving;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+.discoball {
+  border: 0px solid black;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  background: linear-gradient(right, grey, purple);
+  border-radius: 50%;
+  margin: 15%;
+  -webkit-animation-name: Rotate;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.inner1 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: blue;
+  -webkit-animation-name: Rotate;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.inner2 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: black;
+}
+.discoball:hover {
+  transform: rotate(360deg);
+  transition-duration: 10s;
+}
+@-webkit-keyframes Rotate {
+  from{-webkit-transform: rotate(0deg);}
+  to{-webkit-transform: rotate(360deg);}
+}
+
