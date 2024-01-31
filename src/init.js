@@ -20,7 +20,7 @@ $(document).ready(function() {
     //console.log(dancerMakerFunctionName);
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-    console.log(dancerMakerFunction);
+    //console.log(dancerMakerFunction);
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(

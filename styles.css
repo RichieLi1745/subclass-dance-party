@@ -33,6 +33,9 @@ body, a:link, a:visited, a:active{
   width: 100px;
   height: 100px;
   margin-top: 20px;
+  animation-name: pacmanRotate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 .pacman_eye {
   position: absolute;
@@ -44,6 +47,24 @@ body, a:link, a:visited, a:active{
   background: #333333;
 }
 .pacman_mouth {
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-name: eat;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+.pacman_eyeY {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 20px;
+  right: 40px;
+  background: #333333;
+}
+.pacman_mouthY {
   background: #000;
   position: absolute;
   width: 100%;
@@ -87,6 +108,7 @@ Pacman Food
   animation-name: food;
   animation-duration: 0.7s;
   animation-iteration-count: infinite;
+
 }
 /*
 Pacman food animation using keyframes
@@ -101,10 +123,38 @@ Pacman food animation using keyframes
     opacity: 0;
   }
 }
-.pacManAll {
-  animation-name: moving;
+.pacManX {
+  animation-name: movingX;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+}
+@keyframes movingX {
+  from{
+    transform: rotate(360deg);
+  }
+  to{
+    transform: rotate(270deg);
+  }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+.pacManY {
+  animation-name: movingY;
+  animation-duration: 3s;
+  animation-timing-function: infinite;
+}
+
+@keyframes movingY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(200px);
+  }
 }
 
 
@@ -118,10 +168,10 @@ Pacman food animation using keyframes
   background: linear-gradient(right, grey, purple);
   border-radius: 50%;
   margin: 15%;
-  -webkit-animation-name: Rotate;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
+  animation-name: Rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .inner1 {
   position: absolute;
@@ -129,10 +179,10 @@ Pacman food animation using keyframes
   height: 20px;
   border-radius: 50%;
   background: blue;
-  -webkit-animation-name: Rotate;
-  -webkit-animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
+  animation-name: Rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .inner2 {
   position: absolute;
@@ -141,12 +191,36 @@ Pacman food animation using keyframes
   border-radius: 50%;
   background: black;
 }
+.inner3 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  animation-name: Blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
 .discoball:hover {
   transform: rotate(360deg);
   transition-duration: 10s;
 }
-@-webkit-keyframes Rotate {
+
+@keyframes Rotate {
   from{-webkit-transform: rotate(0deg);}
   to{-webkit-transform: rotate(360deg);}
+}
+@keyframes Blink {
+  0% {
+    transform: translateY(25px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+  100% {
+    transform: translatey(25px);
+    opacity: 1;
+  }
 }
 
